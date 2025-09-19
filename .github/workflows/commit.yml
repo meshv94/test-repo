@@ -20,7 +20,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: "45 17 * * *"   # runs daily at 11:15 PM IST
+    - cron: "50 9 * * *"   # runs daily at 11:15 PM IST
   workflow_dispatch:        # allows manual run
 
 permissions:
@@ -36,8 +36,8 @@ jobs:
       - name: Make changes
         run: |
           echo "Last run: $(date)" >> log.txt
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Meshv Patel"
+          git config user.email "meshv1444@gmail.com"
           git add log.txt
           git commit -m "Automated commit: $(date)"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
